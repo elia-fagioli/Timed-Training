@@ -1,0 +1,41 @@
+.table td,
+.table th {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.table td button{
+  border: none;
+}
+
+.table{
+  text-align: right;
+}
+
+.fixed-add-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1%;
+}
+
+.fixed-add-button svg{
+  width: 11%;
+  min-width: 30px;
+  max-width: 50px;
+  height: auto;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/*edit component*/
+.blur-overlay {
+  filter: blur(5px);
+}
+.app-edit_tablerow {
+  filter: none;
+}

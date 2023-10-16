@@ -1,0 +1,72 @@
+/* Imposta i bordi laterali per le celle della tabella */
+.table td,
+.table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.table td button {
+  border: none;
+}
+
+.table th:last-child,
+.table td:last-child {
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    width: auto;
+    display: block;
+  }
+}
+
+.fixed-add-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1%;
+}
+
+.fixed-add-button svg {
+  width: 11%;
+  min-width: 30px;
+  max-width: 50px;
+  height: auto;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.blur-overlay {
+  filter: blur(5px);
+}
+
+input[type="text"] {
+  font-family: "Arial Black";
+  text-align: center;
+  width: 4ch;
+  border: none;
+}
+input[type="number"] {
+  font-family: "Berlin Sans FB";
+  text-align: left;
+  width: 6ch;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+td input {
+  flex: 1;
+}
+
+.row-border{
+  border: 3px solid black;
+}
+

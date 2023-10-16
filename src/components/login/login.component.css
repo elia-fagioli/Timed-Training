@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+}
+/*rendo bottone uguale a un link*/
+.sentEmailReset{
+  --bs-btn-color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+  border: none;
+  --bs-btn-hover-color: #0a58ca;
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-active-color: #0a58ca;
+  --bs-btn-active-bg: transparent;
+}

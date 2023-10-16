@@ -1,0 +1,38 @@
+<div class="card-img-overlay container-fluid d-flex align-items-center justify-content-center" style="text-align: center;">
+  <div class="col-sm-6 col-md-6 col-lg-4 mx-auto rounded-4 p-5">
+    <h3 class="mb-4">Inserisci le tue credenziali</h3>
+    <form [formGroup]="form" (ngSubmit)="registrazioneEmailPassword()">
+      <div class="form-group mb-2">
+        <input formControlName="email" type="email" class="form-control form-control-lg mb-2" placeholder="example@gmail.com">
+        <div *ngIf="form.get('email')?.errors && form.get('email')?.touched" class="validation-message">
+          <p class="error-message" *ngIf="form.get('email')?.hasError('required')">Il campo email è obbligatorio.</p>
+          <p class="error-message" *ngIf="form.get('email')?.hasError('pattern')">Il formato dell'email non è valido.</p>
+        </div>
+        <p class="error-message" *ngIf="this.already_exists">Email già registrata</p>
+      </div>
+      <div class="form-group mb-2">
+        <input [type]="showPassword ? 'text' : 'password'" formControlName="password" type="password" class="form-control form-control-lg" placeholder="password" autocomplete="">
+
+        <div class="mt-2">
+          <input type="checkbox" class="form-check-input" id="showPasswordCheckbox" (change)="toggleShowPassword()">
+          <label class="form-check-label ml-2" for="showPasswordCheckbox">Mostra password</label>
+        </div>
+
+        <div *ngIf="form.get('password')?.errors && form.get('password')?.touched" class="validation-message">
+          <p class="error-message" *ngIf="form.get('password')?.hasError('required')">Il campo password è obbligatorio.</p>
+          <div class="error-message" *ngIf="form.get('password')?.hasError('pattern')">
+            <p>La password deve soddisfare i seguenti criteri:</p>
+            <ul>
+              <li>almeno una lettera maiuscola, una minuscola e un numero</li>
+              <li>almeno un carattere speciale tra <code>! @ # $ % ^ & *</code>.</li>
+              <li>Deve essere lunga almeno 8 caratteri.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mb-2">
+        <button class="btn btn-outline-primary" type="submit" [disabled]="form.invalid">Registrati</button>
+      </div>
+    </form>
+  </div>
+</div>

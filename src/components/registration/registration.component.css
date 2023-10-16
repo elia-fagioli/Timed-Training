@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+}
+
+p.error-message, div.error-message{
+  color: red;
+  margin: auto;
+}
+
+.ml-2 {
+  margin-left: 0.3rem!important;
+}

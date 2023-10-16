@@ -1,0 +1,29 @@
+.timer-svg {
+  display: block;
+  margin: 0 auto; /* Centra il cerchio orizzontalmente */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.timer-progress {
+  transition: stroke-dashoffset 1s linear; /* Imposta l'animazione della transizione */
+}
+
+.btn-primary {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+.btn-primary:hover {
+  background-color: grey;
+  color: white;
+  border-color: white;
+}
+
+.btn-primary:active {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+

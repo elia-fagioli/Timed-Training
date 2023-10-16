@@ -1,0 +1,21 @@
+.btn-primary {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+.btn-primary:hover {
+  background-color: grey;
+  color: white;
+  border-color: white;
+}
+
+.btn-primary:active {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+.fs19 {
+  font-size: 19px;
+}

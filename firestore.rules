@@ -1,0 +1,28 @@
+rules_version = '2';
+//È necessario utilizzare la versione 2 se si prevede di utilizzare le query del gruppo di raccolta 
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+//'match' identificano i documenti nel database
+    match /users/{userId} {
+//'allow' espressioni, che controllano l'accesso a tali documenti
+      allow create: if request.auth == null; // Consente la creazione di nuovi documenti solo agli utenti non autenticati
+      allow read, write: if request.auth != null; // Consente l'accesso agli utenti autenticati per la lettura e la scrittura
+    }
+    // Aggiungi altre regole per le altre collezioni se necessario
+  }
+  
+  match /databases/{database}/documents {
+    match /schede/{document=**} {
+      allow read: if request.auth != null; // Consenti a tutti gli utenti autenticati di leggere i dati
+      allow write: if request.auth != null; // come per la lettura
+    }
+  }
+  
+  match /databases/{database}/documents {
+    match /esercizi/{document=**} {
+      allow read: if request.auth != null; // Consenti a tutti gli utenti autenticati di leggere i dati
+      allow write: if request.auth != null; // come per la lettura
+    }
+  }
+}
